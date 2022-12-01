@@ -1,3 +1,3 @@
 import compare from "./src/compare.js";
-export const generateDiff = compare;
+export default compare;
 
