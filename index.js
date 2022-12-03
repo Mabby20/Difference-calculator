@@ -1,3 +1,3 @@
-import compare from "./src/compare.js";
-export default compare;
+import compare from './src/compare.js';
 
+export default compare;
