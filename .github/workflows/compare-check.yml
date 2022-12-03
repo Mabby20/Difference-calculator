@@ -25,3 +25,4 @@ jobs:
           CODECLIMAT_TOKEN: ${{ secrets.CODECLIMAT_TOKEN }}
         with:
           coverageCommand: make test-coverage
+          debug: true
