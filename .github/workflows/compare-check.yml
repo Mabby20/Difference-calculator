@@ -1,7 +1,7 @@
 name: compare-check
 on: push
 env:
-  CI: true;
+  CI: true
 jobs:
   build:
     runs-on: ubuntu-latest
