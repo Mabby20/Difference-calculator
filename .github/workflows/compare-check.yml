@@ -5,9 +5,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: clone rep
-        uses: action/checkout@v2
+        uses: actions/checkout@v2
       - name: install node
-        uses: action/setup-node@v2
+        uses: actions/setup-node@v2
         with:
           node-version: '15.x'
           cache: 'npm'
