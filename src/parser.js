@@ -1,16 +1,16 @@
 import fs from 'fs';
 import yaml from 'js-yaml';
 
-export default (type, path) => {
-  switch (type) {
+export default (extension, data) => {
+  switch (extension) {
     case 'json':
-      return JSON.parse(fs.readFileSync(path, 'utf8'));
+      return JSON.parse(data);
 
     case 'yml':
-      return yaml.load(fs.readFileSync(path, 'utf8'));
+      return yaml.load(data);
 
     case 'yaml':
-      return yaml.load(fs.readFileSync(path, 'utf8'));
+      return yaml.load(data);
 
     default:
       throw new Error(`This ${type} is not used`);
