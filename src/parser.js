@@ -1,4 +1,3 @@
-import fs from 'fs';
 import yaml from 'js-yaml';
 
 export default (extension, data) => {
@@ -13,6 +12,6 @@ export default (extension, data) => {
       return yaml.load(data);
 
     default:
-      throw new Error(`This ${type} is not used`);
+      throw new Error(`This ${extension} is not used`);
   }
 };

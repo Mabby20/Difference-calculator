@@ -10,13 +10,13 @@ const readFixture = (filename) => fs.readFileSync(getFixturePath(filename), 'utf
 const data = [
   ['file1.json', 'file2.json', 'stylish.txt'],
   ['file1.yaml', 'file2.yaml', 'stylish.txt'],
-  ['file1.yml', 'file2.yml','stylish.txt'],
-]
+  ['file1.yml', 'file2.yml', 'stylish.txt'],
+];
 
 describe('check compare', () => {
-  test.each(data)(`compare test %s, %s, %s`, (firstFile, secondFile, stylishFile) => {
+  test.each(data)('compare test %s, %s, %s', (firstFile, secondFile, stylishFile) => {
     const expectedResult = readFixture(stylishFile).trim();
-    const actualResult = compare(getFixturePath(firstFile), getFixturePath(secondFile))
+    const actualResult = compare(getFixturePath(firstFile), getFixturePath(secondFile));
     expect(actualResult).toBe(expectedResult);
-  })
+  });
 });
