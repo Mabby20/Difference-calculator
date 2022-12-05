@@ -1,3 +1,4 @@
+import fs from 'fs';
 import path from 'path';
 import _ from 'lodash';
 import parser from './parser.js';
@@ -27,12 +28,22 @@ const compare = (obj1, obj2) => {
 };
 
 const getAbsPath = (filePath) => path.resolve(process.cwd(), filePath);
+const getExtension = (filePath) => path.parse(filePath).ext.slice(1);
+const readFile = (filePath) => fs.readFileSync(filePath, 'utf8');
 
-export default (filePath1, filePath2, type = 'json') => {
+export default (filePath1, filePath2, outputFormat = 'json') => {
   const path1 = getAbsPath(filePath1);
   const path2 = getAbsPath(filePath2);
-  const obj1 = parser(type, path1);
-  const obj2 = parser(type, path2);
+
+  const ext1 = getExtension(filePath1);
+  const ext2 = getExtension(filePath2)
+
+  const data1 = readFile(path1);
+  const data2 = readFile(path2);
+
+  const obj1 = parser(ext1, data1);
+  const obj2 = parser(ext2, data2);
+
   const res = compare(obj1, obj2);
   return res;
 };
