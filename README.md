@@ -3,4 +3,4 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/d2714b84cec473799f64/maintainability)](https://codeclimate.com/github/Mabby20/frontend-project-46/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/d2714b84cec473799f64/test_coverage)](https://codeclimate.com/github/Mabby20/frontend-project-46/test_coverage)
 ## Example of work gendiff
-[![asciicast](https://asciinema.org/a/FWflR0yhjuStIAqWqSH0x3XyF.svg)](https://asciinema.org/a/FWflR0yhjuStIAqWqSH0x3XyF)
+[![asciicast](https://asciinema.org/a/uehirCeTxYP8tA8GGfY7YcAoK.svg)](https://asciinema.org/a/uehirCeTxYP8tA8GGfY7YcAoK)
