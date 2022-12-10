@@ -13,6 +13,8 @@ const data2 = [
   ['file1.yaml', 'file2.yaml', 'expected-stylish.txt', 'stylish'],
   ['file1.json', 'file2.json', 'expected-plain.txt', 'plain'],
   ['file1.yaml', 'file2.yaml', 'expected-plain.txt', 'plain'],
+  ['file1.json', 'file2.json', 'expected-json.txt', 'json'],
+  ['file1.yaml', 'file2.yaml', 'expected-json.txt', 'json'],
 ];
 
 describe('check compare', () => {
