@@ -17,8 +17,7 @@ const buildLine = (data) => {
     } = node;
     switch (type) {
       case 'nested':
-        const curPath = [...path, name];
-        return children.flatMap((child) => iter(child, curPath));
+        return children.flatMap((child) => iter(child, [...path, name]));
 
       case 'deleted':
         return `Property '${[...path, name].join('.')}' was removed`;
