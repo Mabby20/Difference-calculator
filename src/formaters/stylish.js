@@ -38,9 +38,8 @@ const stylish = (tree) => {
           ].join('\n');
 
         case 'unchanged':
-          return `${repeatForString}  ${name}: ${stringify(value, depth + 1)}`;
         default:
-          throw new Error(`this ${type} is not defined`);
+          return `${repeatForString}  ${name}: ${stringify(value, depth + 1)}`;
       }
     });
     return ['{', ...res, `${repeatForBracket}}`].join('\n');
