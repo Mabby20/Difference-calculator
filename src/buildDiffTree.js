@@ -17,11 +17,13 @@ const buildDiffTree = (obj1, obj2) => {
       return { name: currentKey, type: 'added', value: obj2[currentKey] };
     }
 
-    if (obj2[currentKey] === obj1[currentKey]) {
-      return { name: currentKey, type: 'unchanged', value: obj1[currentKey] };
+    if (obj2[currentKey] !== obj1[currentKey]) {
+      return {
+        name: currentKey, type: 'changed', before: obj1[currentKey], after: obj2[currentKey],
+      };
     }
     return {
-      name: currentKey, type: 'changed', before: obj1[currentKey], after: obj2[currentKey],
+      name: currentKey, type: 'unchanged', value: obj1[currentKey],
     };
   });
   return lines;
