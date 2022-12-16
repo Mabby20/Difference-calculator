@@ -6,8 +6,6 @@ export default (extension, data) => {
       return JSON.parse(data);
 
     case 'yml':
-      return yaml.load(data);
-
     case 'yaml':
       return yaml.load(data);
 
