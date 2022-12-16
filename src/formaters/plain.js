@@ -15,18 +15,19 @@ const buildLine = (data) => {
     const {
       name, type, children, value, before, after,
     } = node;
+    const currentPath = [...path, name];
     switch (type) {
       case 'nested':
-        return children.flatMap((child) => iter(child, [...path, name]));
+        return children.flatMap((child) => iter(child, currentPath));
 
       case 'deleted':
-        return `Property '${[...path, name].join('.')}' was removed`;
+        return `Property '${currentPath.join('.')}' was removed`;
 
       case 'added':
-        return `Property '${[...path, name].join('.')}' was added with value: ${getOutputValue(value)}`;
+        return `Property '${currentPath.join('.')}' was added with value: ${getOutputValue(value)}`;
 
       case 'changed':
-        return `Property '${[...path, name].join('.')}' was updated. From ${getOutputValue(before)} to ${getOutputValue(after)}`;
+        return `Property '${currentPath.join('.')}' was updated. From ${getOutputValue(before)} to ${getOutputValue(after)}`;
 
       case 'unchanged':
         return [];
