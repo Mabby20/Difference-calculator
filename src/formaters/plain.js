@@ -30,10 +30,8 @@ const buildLine = (data) => {
         return `Property '${currentPath.join('.')}' was updated. From ${getOutputValue(before)} to ${getOutputValue(after)}`;
 
       case 'unchanged':
-        return [];
-
       default:
-        throw new Error(`This ${type} is not defined`);
+        return [];
     }
   };
   return iter(data, []);
