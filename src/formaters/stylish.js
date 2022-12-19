@@ -1,22 +1,22 @@
 import _ from 'lodash';
 
-const getIndent = (depth, count = 4, replacer = ' ') => replacer.repeat(count * depth);
+const getIndent = (depth, spacesCount = 4, replacer = ' ') => replacer.repeat(spacesCount * depth);
 
 const stringify = (node, depth = 1) => {
-  const repeatStr = getIndent(depth, 4, ' ');
-  const repeatBrck = getIndent(depth - 1, 4, ' ');
+  const repeatStr = getIndent(depth);
+  const repeatBracket = getIndent(depth - 1);
   if (!_.isObject(node)) {
     return `${node}`;
   }
   const entries = Object.entries(node);
   const lines = entries.map(([key, value]) => `${repeatStr}${key}: ${stringify(value, depth + 1)}`);
-  return ['{', ...lines, `${repeatBrck}}`].join('\n');
+  return ['{', ...lines, `${repeatBracket}}`].join('\n');
 };
 
 const stylish = (tree) => {
   const iter = (node, depth) => {
-    const repeatForString = getIndent(depth, 4, ' ').slice(0, -2);
-    const repeatForBracket = getIndent(depth - 1, 4, ' ');
+    const repeatForString = getIndent(depth).slice(0, -2);
+    const repeatForBracket = getIndent(depth - 1);
     const res = node.map((currentElement) => {
       const {
         name, type, value, children, before, after,
