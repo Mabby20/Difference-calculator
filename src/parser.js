@@ -1,7 +1,7 @@
 import yaml from 'js-yaml';
 
-export default (extension, data) => {
-  switch (extension) {
+export default (formatName, data) => {
+  switch (formatName) {
     case 'json':
       return JSON.parse(data);
 
@@ -10,6 +10,6 @@ export default (extension, data) => {
       return yaml.load(data);
 
     default:
-      throw new Error(`This ${extension} is not used`);
+      throw new Error(`This ${formatName} is not used`);
   }
 };
